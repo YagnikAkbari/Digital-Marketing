@@ -40,12 +40,13 @@ export default function Home() {
       />
       <Navbar />
       <MainSection />
-      <Services />
+      {/* <Services /> */}
+      <ContactUs />
       {/* <Portfolio />
       <Clients />
       <Testimonials />
       <Faqs />
-      <ContactUs />
+     
       <FooterCaller />
       <FooterService />
       <Footer /> */}

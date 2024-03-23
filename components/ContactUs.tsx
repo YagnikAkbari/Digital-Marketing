@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "../styles/ContactUs.module.scss";
+import SectionHeader from "@/common/SectionHeader";
 
 export default function ContactPageOne() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -10,18 +11,13 @@ export default function ContactPageOne() {
 
   return (
     <div>
+      <SectionHeader header={"Contant Us"} />
       <div className="mx-auto max-w-7xl px-4">
         <div className="mx-auto max-w-7xl py-12 md:py-24">
           <div className="grid items-center justify-items-center gap-x-4 gap-y-10 lg:grid-cols-2">
             {/* contact from */}
             <div className="flex items-center justify-center">
               <div className="px-2 md:px-12">
-                <p className="text-2xl font-bold text-gray-900 md:text-4xl">
-                  Get in touch
-                </p>
-                <p className="mt-4 text-lg text-gray-600">
-                  Our friendly team would love to hear from you.
-                </p>
                 <form action="" className="mt-8 space-y-4">
                   <div className="grid w-full gap-y-4 md:gap-x-4 lg:grid-cols-2">
                     <div className="grid w-full  items-center gap-1.5">
@@ -70,20 +66,6 @@ export default function ContactPageOne() {
                   <div className="grid w-full  items-center gap-1.5">
                     <label
                       className="text-sm font-medium leading-none text-gray-700 peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                      htmlFor="phone_number"
-                    >
-                      Phone number
-                    </label>
-                    <input
-                      className="flex h-10 w-full rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50 dark:border-gray-700 dark:text-gray-50 dark:focus:ring-gray-400 dark:focus:ring-offset-gray-900"
-                      type="tel"
-                      id="phone_number"
-                      placeholder="Phone number"
-                    />
-                  </div>
-                  <div className="grid w-full  items-center gap-1.5">
-                    <label
-                      className="text-sm font-medium leading-none text-gray-700 peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
                       htmlFor="message"
                     >
                       Message
@@ -109,16 +91,21 @@ export default function ContactPageOne() {
                 We'd love to help you out with any queries or service-related
                 information at the earliest. Please drop in a line.{" "}
               </p>
-              <h1 style={{ fontWeight: "bold", color: "white" }}>
+              <div>
+                <p style={{ fontWeight: "bold", color: "white" }}>
+                  {" "}
+                  Working Hours
+                </p>
+                <p>
+                  10 AM to 6 PM IST <br />
+                  Mon - Sat
+                </p>
+              </div>
+              <div>
                 {" "}
-                Working Hours
-              </h1>
-              <p>
-                10 AM to 6 PM IST <br />
-                Mon - Sat
-              </p>
-              <p style={{ color: "#B34400" }}>help@growwitup.com</p>
-              <p>Trusted by many creators.</p>
+                <p style={{ color: "#B34400" }}>help@growwitup.com</p>
+                <p>Trusted by many creators.</p>
+              </div>
             </div>
           </div>
         </div>
