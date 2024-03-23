@@ -3,14 +3,8 @@ import styles from "../styles/ContactUs.module.scss";
 import SectionHeader from "@/common/SectionHeader";
 
 export default function ContactPageOne() {
-  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-
   return (
-    <div>
+    <div className="mt-14">
       <SectionHeader header={"Contant Us"} />
       <div className="mx-auto max-w-7xl px-4">
         <div className="mx-auto max-w-7xl py-12 md:py-24">
@@ -110,7 +104,6 @@ export default function ContactPageOne() {
           </div>
         </div>
       </div>
-      <hr className="mt-6" />
     </div>
   );
 }

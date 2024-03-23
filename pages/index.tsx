@@ -40,16 +40,15 @@ export default function Home() {
       />
       <Navbar />
       <MainSection />
-      {/* <Services /> */}
-      <ContactUs />
-      {/* <Portfolio />
+      <Services />
+      <Portfolio />
       <Clients />
-      <Testimonials />
-      <Faqs />
-     
-      <FooterCaller />
-      <FooterService />
-      <Footer /> */}
+      {/* <Testimonials /> */}
+      {/* <Faqs />     */}
+      {/* <ContactUs /> */}
+      {/* <FooterCaller /> */}
+      {/* <FooterService /> */}
+      {/* <Footer /> */}
     </div>
   );
 }

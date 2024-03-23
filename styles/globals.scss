@@ -8,6 +8,8 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap");
 
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
 @import "theme";
 
 @import "./Navbar.module.scss";
@@ -17,6 +19,7 @@ $transition-duration: 0.35s;
 $roboto-fonts: "Roboto", sans-serif;
 $lato-fonts: "Lato", sans-serif;
 $jost-fonts: "Jost", sans-serif;
+$poppins-fonts: "Poppins", sans-serif;
 //LightModeStyles
 
 .light-mode {
@@ -54,6 +57,7 @@ body {
   //   Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-family: "Inter";
   transition: all 3s ease;
+  box-sizing: border-box;
   scroll-behavior: smooth;
 }
 
@@ -90,8 +94,79 @@ body {
       position: absolute;
       top: 70%;
       left: 103%;
-      width: 80%;
+      width: 230px;
       border-bottom: 5px solid $secondary-color-dark;
+    }
+  }
+
+  .service-card {
+    background-color: $primary-color-dark-dark;
+    max-width: 270px;
+    padding: 26px 24px;
+    border-radius: 16px;
+
+    h3 {
+      font-family: $poppins-fonts;
+      font-weight: 300;
+      font-size: 24px;
+      color: $light-color-dark;
+      margin-top: 16px;
+      line-height: 28px;
+    }
+    p {
+      font-family: $jost-fonts;
+      margin-top: 10px;
+      font-size: 16px;
+      letter-spacing: 0.4px;
+      font-weight: 300;
+      color: $light-color-dark;
+    }
+  }
+
+  .portfolio-card {
+    background-color: $primary-color-dark-dark;
+    max-width: 360px;
+    border-radius: 16px;
+    box-sizing: border-box;
+
+    img {
+      padding: 6px;
+      border-radius: 16px 16px 0 0;
+      width: 360px;
+      height: 250px;
+      background-repeat: no-repeat;
+      background-clip: border-box;
+      background-size: contain;
+    }
+
+    h3 {
+      font-family: $jost-fonts;
+      font-size: 24px;
+      font-weight: 500px;
+      color: $light-color-dark;
+      line-height: 30px;
+    }
+
+    .project-content {
+      padding: 25px 30px;
+    }
+
+    .service-tag {
+      font-size: 16px;
+      text-transform: uppercase;
+      letter-spacing: 0.45px;
+      color: $secondary-color-dark;
+      font-family: $jost-fonts;
+      font-weight: 600;
+    }
+
+    .project-description {
+      font-family: $jost-fonts;
+      margin-top: 10px;
+      color: $light-color-dark;
+      font-weight: 300;
+      font-size: 16px;
+      letter-spacing: 0.4px;
     }
   }
 }
