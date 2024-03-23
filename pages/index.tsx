@@ -29,7 +29,7 @@ export default function Home() {
       className={`${theme === "m-dark" ? "dark-mode" : "light-mode"} contain`}
     >
       <DarkModeSwitch
-        // style={{ position: "fixed", top: "10px", right: "50px" }}
+        style={{ position: "fixed", top: "10px", right: "50px" }}
         checked={!isDarkMode}
         onChange={() => {
           dispatch(toggleTheme(!isDarkMode ? "m-dark" : "m-light"));
@@ -41,14 +41,14 @@ export default function Home() {
       <Navbar />
       <MainSection />
       <Services />
-      <Portfolio />
+      {/* <Portfolio />
       <Clients />
       <Testimonials />
       <Faqs />
       <ContactUs />
       <FooterCaller />
       <FooterService />
-      <Footer />
+      <Footer /> */}
     </div>
   );
 }

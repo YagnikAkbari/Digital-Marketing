@@ -3,8 +3,8 @@ import styles from "../styles/MainSection.module.scss";
 
 const MainSection = () => {
   return (
-    <div className={`flex items-center my-10 ${styles.hero}`}>
-      <div>
+    <div className={`flex items-center justify-between ${styles.hero}`}>
+      <div className={styles["hero-content"]}>
         <h1>
           Ignite Your YouTube Success Journey with Our World-Class Content Team
         </h1>
@@ -14,7 +14,7 @@ const MainSection = () => {
           Success, Unleashing the Power of Social Media and Elevating Your
           Online Presence.
         </p>
-        <button>Get Your Session</button>
+        <button className={`call-to-action`}>Get Your Session</button>
       </div>
       <img src="images/Hero.svg" alt="Hero..." />
     </div>
