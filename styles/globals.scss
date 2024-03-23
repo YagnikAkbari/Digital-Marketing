@@ -2,21 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap");
+
 @import "theme";
 
-$transition-duration: 0.35s;
+@import "./Navbar.module.scss";
+@import "./MainSection.module.scss";
 
-// Light Mode Styles
+$transition-duration: 0.35s;
+$roboto-fonts: "Roboto", sans-serif;
+//LightModeStyles
+
 .light-mode {
   background-color: $background-color-light;
-  color: $primary-color-light;
+  // color: $primary-color-light;
   transition: all $transition-duration ease;
 }
 
 // Dark Mode Styles
 .dark-mode {
   background-color: $background-color-dark;
-  color: $primary-color-dark;
+  // color: $primary-color-dark;
   transition: all $transition-duration ease;
 }
 
@@ -42,6 +52,12 @@ body {
   //   Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-family: "Inter";
   transition: all 3s ease;
+  scroll-behavior: smooth;
+}
+
+.contain {
+  max-width: 1366px;
+  margin: auto;
 }
 
 @layer utilities {

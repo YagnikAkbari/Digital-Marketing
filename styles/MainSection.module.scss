@@ -1,0 +1,16 @@
+@import "theme";
+
+.hero {
+  h1 {
+    font-family: "Lato", sans-serif;
+    font-size: 52px;
+    line-height: 65px;
+    font-weight: 500;
+    color: $light-color-dark;
+  }
+
+  p {
+    font-family: "Jost", sans-serif;
+    color: $light-color-dark;
+  }
+}

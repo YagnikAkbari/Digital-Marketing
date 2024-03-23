@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { DarkModeSwitch } from "react-toggle-dark-mode";
 
 import { toggleTheme } from "@/store/action";
@@ -15,20 +15,28 @@ import Navbar from "@/components/Navbar";
 import Portfolio from "@/components/Portfolio";
 import Services from "@/components/Services";
 import Testimonials from "@/components/Testimonials";
+import { RootState } from "@/store/store";
 
 export default function Home() {
   const dispatch = useDispatch();
-  const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
+  const theme = useSelector((state: RootState) => state?.theme);
+  const [isDarkMode, setIsDarkMode] = useState<boolean>(
+    theme === "m-dark" ? true : false
+  );
+
   return (
-    <div>
+    <div
+      className={`${theme === "m-dark" ? "dark-mode" : "light-mode"} contain`}
+    >
       <DarkModeSwitch
-        style={{}}
+        // style={{ position: "fixed", top: "10px", right: "50px" }}
         checked={!isDarkMode}
         onChange={() => {
           dispatch(toggleTheme(!isDarkMode ? "m-dark" : "m-light"));
           setIsDarkMode((prevState) => !prevState);
         }}
-        size={40}
+        size={35}
+        moonColor="rgba(236,236,236,1)"
       />
       <Navbar />
       <MainSection />
