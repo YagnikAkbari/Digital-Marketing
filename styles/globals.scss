@@ -29,18 +29,13 @@ $poppins-fonts: "Poppins", sans-serif;
 $montserrat-fonts: "Montserrat", sans-serif;
 $inter-fonts: "Inter", sans-serif;
 
-//LightModeStyles
-
 .light-mode {
   background-color: $background-color-light;
-  // color: $primary-color-light;
   transition: all $transition-duration ease;
 }
 
-// Dark Mode Styles
 .dark-mode {
   background-color: $background-color-dark;
-  // color: $primary-color-dark;
   transition: all $transition-duration ease;
 }
 
@@ -50,44 +45,36 @@ $inter-fonts: "Inter", sans-serif;
   --background-end-rgb: 255, 255, 255;
 }
 
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-} */
-
 html,
 body {
   padding: 0;
   margin: 0;
-  // background-color: $background-color-dark;
   font-family: "Inter";
   transition: all 3s ease;
   box-sizing: border-box;
   scroll-behavior: smooth;
   transition: all 0s ease;
 }
-/* Adjust the width of the scrollbar */
+
 ::-webkit-scrollbar {
   width: 10px;
-  background-color: rgb(44, 44, 44); /* Change 'color' to 'background-color' */
+  background-color: rgb(44, 44, 44);
 }
 
-/* Define the style of the scrollbar thumb */
 ::-webkit-scrollbar-thumb {
-  background-color: rgb(58, 58, 58); /* Change 'color' to 'background-color' */
+  background-color: rgb(58, 58, 58);
 }
-
-/* Optionally, you can style the track piece as well */
-/* ::-webkit-scrollbar-track-piece {
-  background-color: rgb(58, 58, 58); 
-} */
 
 .contain {
   max-width: 1366px;
   margin: auto;
+
+  .sun-moon {
+    position: fixed;
+    top: 20px;
+    right: 10px;
+    z-index: 10;
+  }
 
   .call-to-action {
     background-color: $primary-color-dark;
@@ -264,11 +251,9 @@ body {
 // @media screen and (max-width: 1366px) {
 //   .contain {
 //     padding: 0 2.5rem;
-
 //     .portfolio-card {
 //       max-width: 380px;
 //     }
-
 //     .testimonial-card {
 //       max-width: 380px;
 //     }
@@ -294,9 +279,7 @@ body {
 //     width: 50%;
 //     flex-wrap: wrap;
 //   }
-
 //   .testimonial-card {
-//     // max-width: 10%;
 //   }
 // }
 
@@ -304,6 +287,22 @@ body {
   .contain {
     width: 100vw;
     margin: auto;
+
+    .sun-moon {
+      position: fixed;
+      top: 20px;
+      right: 16px;
+      z-index: 10;
+
+      svg {
+        width: 30px;
+      }
+    }
+
+    .call-to-action {
+      display: block;
+      margin: 2rem auto;
+    }
 
     .primary-header {
       font-size: 20px;
@@ -325,11 +324,5 @@ body {
         border-bottom: 3px solid $secondary-color-dark;
       }
     }
-  }
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
   }
 }

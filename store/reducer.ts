@@ -17,7 +17,6 @@ const rootReducer = (
   state: ToggleThemeState = initialState,
   action: ToggleThemeAction
 ) => {
-  // Define how state should change in response to different actions
   switch (action.type) {
     case TOOGLE_THEME:
       return { ...state, theme: action?.payload };

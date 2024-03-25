@@ -27,17 +27,18 @@ export default function Home() {
   return (
     <div className={`${theme === "m-dark" ? "dark-mode" : "light-mode"}`}>
       <div className="contain">
-        <DarkModeSwitch
-          style={{ position: "fixed", top: "20px", right: "10px" }}
-          checked={!isDarkMode}
-          onChange={() => {
-            dispatch(toggleTheme(!isDarkMode ? "m-dark" : "m-light"));
-            setIsDarkMode((prevState) => !prevState);
-          }}
-          size={35}
-          moonColor="rgba(236,236,236,1)"
-          sunColor="rgba(236,236,236,1)"
-        />
+        <div className="sun-moon">
+          <DarkModeSwitch
+            checked={!isDarkMode}
+            onChange={() => {
+              dispatch(toggleTheme(!isDarkMode ? "m-dark" : "m-light"));
+              setIsDarkMode((prevState) => !prevState);
+            }}
+            size={35}
+            moonColor="rgba(236,236,236,1)"
+            sunColor="rgba(236,236,236,1)"
+          />
+        </div>
         <Navbar />
         <MainSection />
         <Services />
