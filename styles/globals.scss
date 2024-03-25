@@ -324,5 +324,36 @@ body {
         border-bottom: 3px solid $secondary-color-dark;
       }
     }
+
+    .portfolio-card {
+      img {
+        height: 230px;
+      }
+
+      h3 {
+        font-size: 20px;
+        line-height: 26px;
+        margin-top: 10px;
+      }
+
+      .project-content {
+        padding: 20px 25px;
+      }
+
+      .service-tag {
+        font-size: 14px;
+        letter-spacing: 0.35px;
+        font-weight: 600;
+      }
+
+      .project-description {
+        font-family: $jost-fonts;
+        margin-top: 20px;
+        color: $light-color-dark;
+        font-weight: 300;
+        font-size: 16px;
+        letter-spacing: 0.4px;
+      }
+    }
   }
 }

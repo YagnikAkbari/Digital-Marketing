@@ -1,7 +1,12 @@
 @media screen and (max-width: 768px) {
   .projects {
-    div {
+    > div {
       display: block;
+      margin: 2rem 0.85rem;
+
+      > div {
+        margin: 1.25rem 0;
+      }
     }
   }
 }
