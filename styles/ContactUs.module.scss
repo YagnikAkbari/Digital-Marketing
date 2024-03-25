@@ -36,8 +36,31 @@
 
 @media screen and (max-width: 768px) {
   .contact-us {
-    div {
-      display: block;
+    margin: auto;
+    margin-top: 4rem;
+    > div {
+      > div {
+        flex-direction: column;
+        align-items: center;
+      }
     }
+  }
+  .contect-us {
+    margin: auto;
+    width: 100%;
+    form {
+      > div {
+        width: 100%;
+        padding: 0 1.25rem;
+        align-items: center;
+        flex-direction: column;
+      }
+    }
+  }
+
+  .contact-text-right {
+    width: 100%;
+    margin-top: 2rem;
+    padding: 0 1.25rem;
   }
 }

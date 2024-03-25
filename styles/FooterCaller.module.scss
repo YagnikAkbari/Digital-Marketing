@@ -30,9 +30,23 @@
 
 @media screen and (max-width: 768px) {
   .footer-caller {
-    display: block;
+    flex-direction: column;
+    align-items: center;
+    &::after {
+      left: 50%;
+      transform: translate(-50%);
+      width: 90%;
+    }
     div {
-      display: block;
+      margin-top: 1rem;
+      p {
+        font-size: 0.95rem;
+      }
+      .call-to-footer {
+        background-color: rgb(179, 122, 0);
+        padding: 0.5rem;
+        font-size: 0.95rem;
+      }
     }
   }
 }

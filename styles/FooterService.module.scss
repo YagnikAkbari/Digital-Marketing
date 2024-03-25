@@ -32,9 +32,10 @@
 
 @media screen and (max-width: 768px) {
   .newsletter {
-    display: block;
-    div {
-      display: block;
+    flex-direction: column;
+    align-items: center;
+    form {
+      margin-top: 1rem;
     }
   }
 }

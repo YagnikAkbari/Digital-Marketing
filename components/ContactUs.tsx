@@ -48,12 +48,14 @@ export default function ContactPageOne() {
                   id="message"
                 />
               </div>
-              <button
-                type="button"
-                className=" rounded-md text-sm font-semibold"
-              >
-                Send Message
-              </button>
+              <div className="grid w-full items-center gap-1.5">
+                <button
+                  type="button"
+                  className=" rounded-md text-sm font-semibold"
+                >
+                  Send Message
+                </button>
+              </div>
             </form>
           </div>
           <div className={styles["contact-text-right"]}>
