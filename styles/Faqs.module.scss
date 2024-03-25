@@ -42,8 +42,18 @@
 
 @media screen and (max-width: 768px) {
   .faqs {
-    div {
-      display: block;
+    margin: auto;
+    margin-top: 2rem;
+    > div {
+      .accordion {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .single-accordion {
+          margin: 0 1.25rem;
+        }
+      }
     }
   }
 }
