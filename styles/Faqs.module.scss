@@ -1,0 +1,41 @@
+.single-accordion {
+  border: 2px solid rgb(0, 119, 179);
+  transition: all 0.4s ease;
+  &:hover {
+    border-color: rgb(109, 155, 176);
+  }
+}
+
+.faq-closed {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+  width: 100%;
+  border-radius: 3px;
+  padding: 13px;
+  font-family: "Inter", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.accordion {
+  color: rgb(236, 236, 236);
+}
+
+.display {
+  max-height: 500px;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  width: 100%;
+  padding: 13px;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.hide {
+  max-height: 0;
+  overflow: hidden;
+  width: 100%;
+  padding: 0;
+}

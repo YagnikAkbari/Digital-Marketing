@@ -1,0 +1,32 @@
+.footer {
+  position: relative;
+  p {
+    color: rgb(236, 236, 236);
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-bottom: 2px solid rgb(58, 58, 58);
+    width: 100%;
+  }
+}
+
+.social-button {
+  border: 2px solid rgb(0, 119, 179);
+  border-radius: 4px;
+  padding: 8px;
+  width: 51px;
+  height: 51px;
+  cursor: pointer;
+
+  img {
+    width: 35px;
+    height: 35px;
+  }
+  img[alt="linked"] {
+    width: 37px;
+    height: 37px;
+  }
+}

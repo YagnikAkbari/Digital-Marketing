@@ -4,25 +4,13 @@ import React, { useEffect } from "react";
 import styles from "../styles/Navbar.module.scss";
 
 const Navbar = () => {
-  // const scrollToContent = (sectionId: string) => {
-  //   const specificContent = document.getElementById(sectionId);
-  //   if (specificContent) {
-  //     specificContent.scrollIntoView({ behavior: "smooth" });
-  //   }
-  // };
-
   return (
     <>
-      <div className="flex justify-between items-center">
+      <div className="flex justify-between items-center pt-12 pb-14">
         <img src="images/Logo.svg" alt="Logo..." />
         <ul className={`flex space-x-8 ${styles.navbar}`}>
           <li>
-            <Link
-              href="#services"
-              // onClick={() => scrollToContent("services")}
-            >
-              Services
-            </Link>
+            <Link href="#services">Services</Link>
           </li>
           <li>
             <Link href="#projects">Projects</Link>

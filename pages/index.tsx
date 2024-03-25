@@ -25,30 +25,31 @@ export default function Home() {
   );
 
   return (
-    <div
-      className={`${theme === "m-dark" ? "dark-mode" : "light-mode"} contain`}
-    >
-      <DarkModeSwitch
-        style={{ position: "fixed", top: "10px", right: "50px" }}
-        checked={!isDarkMode}
-        onChange={() => {
-          dispatch(toggleTheme(!isDarkMode ? "m-dark" : "m-light"));
-          setIsDarkMode((prevState) => !prevState);
-        }}
-        size={35}
-        moonColor="rgba(236,236,236,1)"
-      />
-      <Navbar />
-      <MainSection />
-      <Services />
-      <Portfolio />
-      <Clients />
-      {/* <Testimonials /> */}
-      {/* <Faqs />     */}
-      {/* <ContactUs /> */}
-      {/* <FooterCaller /> */}
-      {/* <FooterService /> */}
-      {/* <Footer /> */}
+    <div className={`${theme === "m-dark" ? "dark-mode" : "light-mode"}`}>
+      <div className="contain">
+        <DarkModeSwitch
+          style={{ position: "fixed", top: "20px", right: "10px" }}
+          checked={!isDarkMode}
+          onChange={() => {
+            dispatch(toggleTheme(!isDarkMode ? "m-dark" : "m-light"));
+            setIsDarkMode((prevState) => !prevState);
+          }}
+          size={35}
+          moonColor="rgba(236,236,236,1)"
+          sunColor="rgba(236,236,236,1)"
+        />
+        <Navbar />
+        <MainSection />
+        <Services />
+        <Portfolio />
+        <Clients />
+        <Testimonials />
+        <Faqs />
+        <ContactUs />
+        <FooterCaller />
+        <FooterService />
+        <Footer />
+      </div>
     </div>
   );
 }

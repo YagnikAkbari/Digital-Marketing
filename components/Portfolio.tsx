@@ -4,7 +4,7 @@ import React from "react";
 
 const Portfolio = () => {
   return (
-    <div id="projects" className="mt-14">
+    <div id="projects" className="mt-32">
       <SectionHeader header="portfolio" prefix="our" />
       <div className="flex justify-between mt-20">
         <ProjectCard
