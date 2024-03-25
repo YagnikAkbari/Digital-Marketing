@@ -51,7 +51,7 @@ const Faqs = () => {
   };
 
   return (
-    <div id="faqs" className="mt-32">
+    <div id="faqs" className={`mt-32 ${styles.faqs}`}>
       <SectionHeader header="faqs" />
       <div className="flex justify-between mt-20 mx-auto">
         <div

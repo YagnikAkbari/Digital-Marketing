@@ -39,3 +39,11 @@
   width: 100%;
   padding: 0;
 }
+
+@media screen and (max-width: 768px) {
+  .faqs {
+    div {
+      display: block;
+    }
+  }
+}

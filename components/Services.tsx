@@ -1,10 +1,11 @@
 import SectionHeader from "@/common/SectionHeader";
 import ServiceCard from "@/common/ServiceCard";
+import styles from "../styles/Services.module.scss";
 import React from "react";
 
 const Services = () => {
   return (
-    <div id="services" className="mt-14">
+    <div id="services" className={`mt-14 ${styles.services}`}>
       <SectionHeader header="services" prefix="our" />
       <div className="flex justify-between mt-20">
         <ServiceCard

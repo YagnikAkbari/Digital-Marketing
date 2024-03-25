@@ -29,3 +29,12 @@
     width: 51px;
   }
 }
+
+@media screen and (max-width: 768px) {
+  .newsletter {
+    display: block;
+    div {
+      display: block;
+    }
+  }
+}

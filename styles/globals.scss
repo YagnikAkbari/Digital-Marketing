@@ -261,9 +261,70 @@ body {
   }
 }
 
-@media screen and (max-width: 1024px) {
-  body {
-    display: none;
+// @media screen and (max-width: 1366px) {
+//   .contain {
+//     padding: 0 2.5rem;
+
+//     .portfolio-card {
+//       max-width: 380px;
+//     }
+
+//     .testimonial-card {
+//       max-width: 380px;
+//     }
+//   }
+// }
+
+// @media screen and (max-width: 1300px) {
+//   #services div {
+//     gap: 2rem;
+//     flex-wrap: wrap;
+//   }
+//   #projects div {
+//     gap: 2rem;
+//   }
+// }
+
+// @media screen and (max-width: 1024px) {
+//   .service-card {
+//     width: 33%;
+//     flex-wrap: wrap;
+//   }
+//   .portfolio-card {
+//     width: 50%;
+//     flex-wrap: wrap;
+//   }
+
+//   .testimonial-card {
+//     // max-width: 10%;
+//   }
+// }
+
+@media screen and (max-width: 768px) {
+  .contain {
+    width: 100vw;
+    margin: auto;
+
+    .primary-header {
+      font-size: 20px;
+      text-transform: uppercase;
+      position: relative;
+      font-weight: 400;
+
+      span {
+        color: $secondary-color-dark;
+        margin-right: 10px;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 70%;
+        left: 103%;
+        width: 0;
+        border-bottom: 3px solid $secondary-color-dark;
+      }
+    }
   }
 }
 

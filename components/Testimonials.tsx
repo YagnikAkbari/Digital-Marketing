@@ -1,10 +1,11 @@
 import SectionHeader from "@/common/SectionHeader";
 import TestimonialCard from "@/common/TestimonialCard";
+import styles from "@/styles/Testimonials.module.scss";
 import React from "react";
 
 const Testimonials = () => {
   return (
-    <div id="testimonials" className="mt-32">
+    <div id="testimonials" className={`mt-32 ${styles.testimonials}`}>
       <SectionHeader header="testimonials" />
       <div className="flex justify-between mt-20">
         <TestimonialCard

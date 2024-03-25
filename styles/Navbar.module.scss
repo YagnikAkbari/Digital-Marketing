@@ -2,7 +2,18 @@
 @import "theme";
 
 .navbar {
-  // font-family: $roboto-fonts;
-  color: $light-color-dark;
-  font-family: "Roboto", sans-serif;
+  ul {
+    color: $light-color-dark;
+    font-family: "Roboto", sans-serif;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    display: block;
+    ul {
+      display: block;
+      margin-left: 0 !important;
+    }
+  }
 }

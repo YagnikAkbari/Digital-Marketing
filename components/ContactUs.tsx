@@ -4,7 +4,7 @@ import SectionHeader from "@/common/SectionHeader";
 
 export default function ContactPageOne() {
   return (
-    <div id="contact-us" className="mt-32">
+    <div id="contact-us" className={`mt-32 ${styles["contact-us"]}`}>
       <SectionHeader header={"Contact Us"} />
       <div className="mt-20">
         <div className="flex items-center justify-between">

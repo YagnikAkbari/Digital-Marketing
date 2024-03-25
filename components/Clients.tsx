@@ -4,7 +4,7 @@ import styles from "../styles/Clients.module.scss";
 
 const Clients = () => {
   return (
-    <div id="clients" className="mt-32">
+    <div id="clients" className={`mt-32 ${styles.clients}`}>
       <SectionHeader header="clients" prefix="our" />
       <div className="grid grid-cols-5 justify-between mt-20 mx-auto gap-4">
         <img

@@ -1,10 +1,11 @@
 import ProjectCard from "@/common/ProjectCard";
 import SectionHeader from "@/common/SectionHeader";
+import styles from "@/styles/Portfolio.module.scss";
 import React from "react";
 
 const Portfolio = () => {
   return (
-    <div id="projects" className="mt-32">
+    <div id="projects" className={`mt-32 ${styles.projects}`}>
       <SectionHeader header="portfolio" prefix="our" />
       <div className="flex justify-between mt-20">
         <ProjectCard

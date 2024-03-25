@@ -27,3 +27,12 @@
     }
   }
 }
+
+@media screen and (max-width: 768px) {
+  .footer-caller {
+    display: block;
+    div {
+      display: block;
+    }
+  }
+}

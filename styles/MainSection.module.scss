@@ -26,3 +26,9 @@
     max-width: 685px;
   }
 }
+
+@media screen and (max-width: 768px) {
+  .hero {
+    display: block;
+  }
+}
