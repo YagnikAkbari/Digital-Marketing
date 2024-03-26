@@ -27,6 +27,30 @@
   }
 }
 
+@media screen and (max-width: 1024px) {
+  .hero {
+    margin: 1.75rem 0;
+
+    h1 {
+      font-size: 2.8rem;
+      line-height: 3.4rem;
+    }
+
+    p {
+      font-size: 1rem;
+      line-height: 1.5rem;
+    }
+
+    img {
+      height: 340px;
+    }
+
+    .hero-content {
+      max-width: 485px;
+    }
+  }
+}
+
 @media screen and (max-width: 768px) {
   .hero {
     display: block;

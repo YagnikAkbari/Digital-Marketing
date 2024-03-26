@@ -270,18 +270,13 @@ body {
 //   }
 // }
 
-// @media screen and (max-width: 1024px) {
-//   .service-card {
-//     width: 33%;
-//     flex-wrap: wrap;
-//   }
-//   .portfolio-card {
-//     width: 50%;
-//     flex-wrap: wrap;
-//   }
-//   .testimonial-card {
-//   }
-// }
+@media screen and (max-width: 1024px) {
+  .contain {
+    width: 100vw;
+    margin: auto;
+    padding: 0 3rem;
+  }
+}
 
 @media screen and (max-width: 768px) {
   .contain {
