@@ -1,4 +1,6 @@
+import { RootState } from "@/store/store";
 import React from "react";
+import { useSelector } from "react-redux";
 
 const ProjectCard = ({
   title,
@@ -11,8 +13,13 @@ const ProjectCard = ({
   description: string;
   image: string;
 }) => {
+  const theme = useSelector((state: RootState) => state?.theme);
   return (
-    <div className="portfolio-card">
+    <div
+      className={`portfolio-card ${
+        theme === "m-light" ? "l-portfolio-card" : ""
+      }`}
+    >
       <img src={image} alt={title + "..."} />
       <div className="project-content">
         <p className="service-tag">{service ?? "video editing"}</p>

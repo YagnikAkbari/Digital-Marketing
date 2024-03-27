@@ -1,5 +1,7 @@
+@use "theme" as *;
+
 .call-to-footer {
-  background-color: rgb(179, 122, 0);
+  background-color: $tertiary-color-dark;
   padding: 1rem 2rem;
   font-size: 1.15rem;
   border-radius: 3px;
@@ -7,6 +9,10 @@
     transform: rotateZ(45deg);
     margin-left: 8px;
   }
+}
+
+.l-call-to-footer {
+  background-color: $tertiary-color-light;
 }
 
 .footer-caller {
@@ -24,6 +30,14 @@
       color: rgb(236, 236, 236);
       font-size: 1.15rem;
       font-family: "Rhodium Libre", serif;
+    }
+  }
+}
+
+.l-footer-caller {
+  div {
+    p {
+      color: $primary-color-light;
     }
   }
 }

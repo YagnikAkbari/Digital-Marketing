@@ -1,3 +1,5 @@
+@use "theme" as *;
+
 .contect-us {
   form {
     div {
@@ -26,11 +28,33 @@
   }
 }
 
+.l-contect-us {
+  form {
+    div {
+      label {
+        color: $primary-color-light;
+      }
+      input,
+      textarea {
+        color: $primary-color-light;
+        background-color: white !important;
+      }
+    }
+  }
+}
+
 .contact-text-right {
   width: 50%;
   p {
     color: white;
     padding-bottom: 20px;
+  }
+}
+.l-contact-us {
+  .contact-text-right {
+    p {
+      color: $primary-color-light;
+    }
   }
 }
 

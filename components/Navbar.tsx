@@ -2,11 +2,16 @@ import Link from "next/link";
 import React from "react";
 
 import styles from "../styles/Navbar.module.scss";
+import { useSelector } from "react-redux";
+import { RootState } from "@/store/store";
 
 const Navbar = () => {
+  const theme = useSelector((state: RootState) => state?.theme);
   return (
     <div
-      className={`flex justify-between items-center pt-12 pb-14 ${styles.navbar}`}
+      className={`flex justify-between items-center pt-12 pb-14 ${
+        styles.navbar
+      } ${theme === "m-light" ? styles["l-navbar"] : ""}`}
     >
       <img src="images/Logo.svg" alt="Logo..." />
       <ul className={`flex space-x-8`}>

@@ -1,9 +1,16 @@
 import React from "react";
 import styles from "../styles/MainSection.module.scss";
+import { useSelector } from "react-redux";
+import { RootState } from "@/store/store";
 
 const MainSection = () => {
+  const theme = useSelector((state: RootState) => state?.theme);
   return (
-    <div className={`flex items-center justify-between ${styles.hero}`}>
+    <div
+      className={`flex items-center justify-between ${styles.hero} ${
+        theme === "m-light" ? styles["l-hero"] : ""
+      }`}
+    >
       <div className={styles["hero-content"]}>
         <h1>
           Ignite Your YouTube Success Journey with Our World-Class Content Team

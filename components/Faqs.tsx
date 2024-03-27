@@ -2,6 +2,8 @@ import SectionHeader from "@/common/SectionHeader";
 import React, { useState } from "react";
 
 import styles from "../styles/Faqs.module.scss";
+import { useSelector } from "react-redux";
+import { RootState } from "@/store/store";
 
 const accrMenu = [
   {
@@ -50,8 +52,15 @@ const Faqs = () => {
     });
   };
 
+  const theme = useSelector((state: RootState) => state?.theme);
+
   return (
-    <div id="faqs" className={`mt-32 ${styles.faqs}`}>
+    <div
+      id="faqs"
+      className={`mt-32 ${styles.faqs} ${
+        theme === "m-light" ? styles["l-faqs"] : ""
+      }`}
+    >
       <SectionHeader header="faqs" />
       <div className="flex justify-between mt-20 mx-auto">
         <div

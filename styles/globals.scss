@@ -110,6 +110,16 @@ body {
     }
   }
 
+  .l-primary-header {
+    color: $primary-color-light;
+    span {
+      color: $tertiary-color-light;
+    }
+    &::after {
+      border-color: $tertiary-color-light;
+    }
+  }
+
   .service-card {
     background-color: $primary-color-dark-dark;
     max-width: 300px;
@@ -131,6 +141,16 @@ body {
       letter-spacing: 0.6px;
       font-weight: 300;
       color: $light-color-dark;
+    }
+  }
+
+  .l-service-card {
+    background-color: white;
+    h3 {
+      color: $primary-color-light;
+    }
+    p {
+      color: $primary-color-light;
     }
   }
 
@@ -179,6 +199,19 @@ body {
       font-weight: 300;
       font-size: 16px;
       letter-spacing: 0.4px;
+    }
+  }
+
+  .l-portfolio-card {
+    background-color: white;
+    h3 {
+      color: $primary-color-light;
+    }
+    .service-tag {
+      color: $tertiary-color-light;
+    }
+    .project-description {
+      color: $primary-color-light;
     }
   }
 
@@ -243,6 +276,16 @@ body {
           text-transform: uppercase;
           opacity: 0.65;
         }
+      }
+    }
+  }
+
+  .l-testimonial-card {
+    background-color: white;
+    color: $primary-color-light;
+    .testimonial-desc {
+      .description {
+        color: $primary-color-light;
       }
     }
   }

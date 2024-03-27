@@ -35,7 +35,7 @@ export default function Home() {
               setIsDarkMode((prevState) => !prevState);
             }}
             size={35}
-            moonColor="rgba(236,236,236,1)"
+            moonColor="rgba(38, 38, 38, 1)"
             sunColor="rgba(236,236,236,1)"
           />
         </div>

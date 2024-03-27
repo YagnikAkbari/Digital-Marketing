@@ -2,10 +2,18 @@ import SectionHeader from "@/common/SectionHeader";
 import ServiceCard from "@/common/ServiceCard";
 import styles from "../styles/Services.module.scss";
 import React from "react";
+import { useSelector } from "react-redux";
+import { RootState } from "@/store/store";
 
 const Services = () => {
+  const theme = useSelector((state: RootState) => state?.theme);
   return (
-    <div id="services" className={`mt-14 ${styles.services}`}>
+    <div
+      id="services"
+      className={`mt-14 ${styles.services} ${
+        theme === "m-light" ? styles["l-services"] : ""
+      }`}
+    >
       <SectionHeader header="services" prefix="our" />
       <div className="flex justify-between mt-20">
         <ServiceCard

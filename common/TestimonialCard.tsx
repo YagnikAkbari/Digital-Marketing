@@ -1,4 +1,6 @@
+import { RootState } from "@/store/store";
 import React from "react";
+import { useSelector } from "react-redux";
 
 const TestimonialCard = ({
   image,
@@ -17,8 +19,13 @@ const TestimonialCard = ({
   description: string;
   designation: string;
 }) => {
+  const theme = useSelector((state: RootState) => state?.theme);
   return (
-    <div className="testimonial-card">
+    <div
+      className={`testimonial-card ${
+        theme === "m-light" ? "l-testimonial-card" : ""
+      }`}
+    >
       <div className="testimonial-desc">
         <p className="service-tag">{service ?? "video editing"}</p>
         <h3>{title ?? "title"}</h3>

@@ -1,14 +1,26 @@
 import React from "react";
 import styles from "../styles/ContactUs.module.scss";
 import SectionHeader from "@/common/SectionHeader";
+import { useSelector } from "react-redux";
+import { RootState } from "@/store/store";
 
 export default function ContactPageOne() {
+  const theme = useSelector((state: RootState) => state?.theme);
   return (
-    <div id="contact-us" className={`mt-32 ${styles["contact-us"]}`}>
+    <div
+      id="contact-us"
+      className={`mt-32 ${styles["contact-us"]} ${
+        theme === "m-light" ? styles["l-contact-us"] : ""
+      }`}
+    >
       <SectionHeader header={"Contact Us"} />
       <div className="mt-20">
         <div className="flex items-center justify-between">
-          <div className={`${styles["contect-us"]} w-[45%]`}>
+          <div
+            className={`${styles["contect-us"]} ${
+              theme === "m-light" ? styles["l-contect-us"] : ""
+            } w-[45%]`}
+          >
             <form className="space-y-4">
               <div className="grid items-center gap-1.5">
                 <label
@@ -64,16 +76,22 @@ export default function ContactPageOne() {
               information at the earliest. Please drop in a line.
             </p>
             <div>
-              <p style={{ fontWeight: "bold", color: "white" }}>
-                Working Hours
-              </p>
+              <p>Working Hours</p>
               <p>
                 10 AM to 6 PM IST <br />
                 Mon - Sat
               </p>
             </div>
             <div>
-              <p style={{ color: "#B34400", fontSize: "20px" }}>
+              <p
+                style={{
+                  color:
+                    theme === "m-light"
+                      ? "rgba(236, 37, 70, 0.769)"
+                      : "#B34400",
+                  fontSize: "20px",
+                }}
+              >
                 growwitup@growwitup.in
               </p>
               <p>Trusted by many creators.</p>

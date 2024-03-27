@@ -1,10 +1,15 @@
 import React from "react";
 import styles from "../styles/Footer.module.scss";
+import { useSelector } from "react-redux";
+import { RootState } from "@/store/store";
 
 const Footer = () => {
+  const theme = useSelector((state: RootState) => state?.theme);
   return (
     <div
-      className={`flex justify-between items-center py-8 ${styles["footer"]}`}
+      className={`flex justify-between items-center py-8 ${styles["footer"]} ${
+        theme === "m-light" ? styles["l-footer"] : ""
+      }`}
     >
       <div className="flex justify-between items-center space-x-4">
         <a

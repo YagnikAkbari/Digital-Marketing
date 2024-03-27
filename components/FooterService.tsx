@@ -1,11 +1,16 @@
 import React, { useState } from "react";
 import styles from "../styles/FooterService.module.scss";
+import { useSelector } from "react-redux";
+import { RootState } from "@/store/store";
 
 const FooterService = () => {
   const [mail, setMail] = useState<string>("");
+  const theme = useSelector((state: RootState) => state?.theme);
   return (
     <div
-      className={`${styles.newsletter} flex items-center justify-center py-16`}
+      className={`${styles.newsletter} flex items-center justify-center py-16 ${
+        theme === "m-light" ? styles["l-newsletter"] : ""
+      }`}
     >
       <label htmlFor="email">Subscribe to our newsletter</label>
       <form

@@ -1,11 +1,19 @@
 import SectionHeader from "@/common/SectionHeader";
 import TestimonialCard from "@/common/TestimonialCard";
+import { RootState } from "@/store/store";
 import styles from "@/styles/Testimonials.module.scss";
 import React from "react";
+import { useSelector } from "react-redux";
 
 const Testimonials = () => {
+  const theme = useSelector((state: RootState) => state?.theme);
   return (
-    <div id="testimonials" className={`mt-32 ${styles.testimonials}`}>
+    <div
+      id="testimonials"
+      className={`mt-32 ${styles.testimonials} ${
+        theme === "m-light" ? styles["l-testimonials"] : ""
+      }`}
+    >
       <SectionHeader header="testimonials" />
       <div className="flex justify-between mt-20">
         <TestimonialCard

@@ -10,7 +10,7 @@ export interface ToggleThemeAction {
 }
 
 const initialState: ToggleThemeState = {
-  theme: "m-dark",
+  theme: "m-light",
 };
 
 const rootReducer = (

@@ -27,6 +27,15 @@
   }
 }
 
+.l-hero {
+  h1 {
+    color: $primary-color-light;
+  }
+  p {
+    color: $primary-color-light;
+  }
+}
+
 @media screen and (max-width: 1024px) and (min-width: 769px) {
   .hero {
     margin: 1.75rem 0;

@@ -8,6 +8,12 @@
   }
 }
 
+.l-navbar {
+  ul {
+    color: $primary-color-light;
+  }
+}
+
 @media screen and (max-width: 1024px) and (min-width: 769px) {
   .navbar {
     padding: 1rem 0;

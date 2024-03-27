@@ -1,3 +1,12 @@
+@use "theme" as *;
+
+.l-faqs {
+  .single-accordion {
+    background-color: white;
+    color: $primary-color-light;
+  }
+}
+
 .single-accordion {
   border: 2px solid rgb(0, 119, 179);
   transition: all 0.4s ease;
