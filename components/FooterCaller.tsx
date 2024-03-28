@@ -11,7 +11,10 @@ const FooterCaller = () => {
         styles["footer-caller"]
       } ${theme === "m-light" ? styles["l-footer-caller"] : ""}`}
     >
-      <img src="images/Logo.svg" alt="Logo..." />
+      <img
+        src={theme === "m-light" ? "images/Logo-dark.svg" : "images/Logo.svg"}
+        alt="Logo..."
+      />
       <div className="flex items-center space-x-8">
         <p>Ready to get started?</p>
         <button

@@ -113,7 +113,7 @@ body {
   .l-primary-header {
     color: $primary-color-light;
     span {
-      color: $tertiary-color-light;
+      color: $tertiary-color-light !important;
     }
     &::after {
       border-color: $tertiary-color-light;
@@ -211,7 +211,7 @@ body {
       color: $tertiary-color-light;
     }
     .project-description {
-      color: $primary-color-light;
+      color: $primary-color-light !important;
     }
   }
 
@@ -318,6 +318,19 @@ body {
     width: 100vw;
     margin: auto;
     padding: 0 3rem;
+
+    .l-portfolio-card {
+      background-color: white;
+      h3 {
+        color: $primary-color-light;
+      }
+      .service-tag {
+        color: $tertiary-color-light;
+      }
+      .project-description {
+        color: $primary-color-light;
+      }
+    }
   }
 }
 

@@ -17,32 +17,66 @@ const Footer = () => {
           target="_blank"
           className={styles["social-button"]}
         >
-          <img src="images/Facebook.svg" alt="facebook" />
+          <img
+            src={
+              theme === "m-light"
+                ? "images/FacebookF-dark.svg"
+                : "images/Facebook.svg"
+            }
+            alt="facebook"
+          />
         </a>
         <a
           href="https://www.google.com"
           target="_blank"
           className={styles["social-button"]}
         >
-          <img src="images/twitter.png" alt="twitter" />
+          <img
+            src={
+              theme === "m-light"
+                ? "images/Twitter-dark.svg"
+                : "images/twitter.png"
+            }
+            alt="twitter"
+          />
         </a>
         <a
           href="https://www.google.com"
           target="_blank"
           className={styles["social-button"]}
         >
-          <img src="images/Linkedin.svg" alt="linked" />
+          <img
+            src={
+              theme === "m-light"
+                ? "images/Linkedin-dark.svg"
+                : "images/Linkedin.svg"
+            }
+            alt="linked"
+          />
         </a>
         <a
           href="https://www.google.com"
           target="_blank"
           className={styles["social-button"]}
         >
-          <img src="images/instagram.svg" alt="instagram" />
+          <img
+            src={
+              theme === "m-light"
+                ? "images/instagram-dark.svg"
+                : "images/instagram.svg"
+            }
+            alt="instagram"
+          />
         </a>
       </div>
       <p className="flex items-center">
-        <img src="images/copy.svg" alt="copy" className="inline" />
+        <img
+          src={
+            theme === "m-light" ? "images/copy-light.svg" : "images/copy.svg"
+          }
+          alt="copy"
+          className="inline"
+        />
         <span className="ms-1">
           2024 Growwitup Studio I All Rights Reserved
         </span>

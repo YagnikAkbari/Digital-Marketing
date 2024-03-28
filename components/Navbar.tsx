@@ -13,7 +13,10 @@ const Navbar = () => {
         styles.navbar
       } ${theme === "m-light" ? styles["l-navbar"] : ""}`}
     >
-      <img src="images/Logo.svg" alt="Logo..." />
+      <img
+        src={theme === "m-light" ? "images/Logo-dark.svg" : "images/Logo.svg"}
+        alt="Logo..."
+      />
       <ul className={`flex space-x-8`}>
         <li>
           <Link href="#services">Services</Link>

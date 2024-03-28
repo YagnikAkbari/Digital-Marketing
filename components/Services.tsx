@@ -23,7 +23,7 @@ years of experience. We know
 that marketing is about results,
 so we provide comprehensive
 reports."
-          image={"images/search.svg"}
+          image={theme === "m-light" ? "images/3.svg" : "images/search.svg"}
         />
         <ServiceCard
           title="STRATEGY"
@@ -33,13 +33,15 @@ reports."
           customers. generate sales and
           get a positive balance of costs
           and profits."
-          image={"images/sward.svg"}
+          image={
+            theme === "m-light" ? "images/dark-chat.svg" : "images/sward.svg"
+          }
         />
         <ServiceCard
           title="ADVERTISING"
           description="We develop and create bright and effective communication materials. We fully support the implementation of your advertising campaign from idea to launch and final results.
           "
-          image={"images/link.svg"}
+          image={theme === "m-light" ? "images/2.svg" : "images/link.svg"}
         />
         <ServiceCard
           title="PR"
@@ -49,7 +51,7 @@ reports."
           necessary content for each of
           the platforms. Promote your
           product."
-          image={"images/ai.svg"}
+          image={theme === "m-light" ? "images/4.svg" : "images/ai.svg"}
         />
       </div>
     </div>
