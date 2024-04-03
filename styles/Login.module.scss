@@ -1,0 +1,39 @@
+@use "theme" as *;
+
+.loginform {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  div {
+    label {
+      margin-left: 0.2rem;
+      margin-bottom: 0.2rem;
+      z-index: 5;
+      color: black;
+      margin-top: 1rem;
+    }
+    input,
+    textarea {
+      border: 2px solid rgb(0, 119, 179) !important;
+      padding: 1rem;
+      z-index: 3;
+      height: 3rem;
+      border-radius: 0.5rem;
+    }
+    textarea {
+      height: 6rem;
+    }
+    input:focus,
+    textarea:focus {
+      outline: none;
+    }
+    .contact-us-submit {
+      width: 100%;
+      margin-top: 1rem;
+      padding: 0;
+      color: rgb(236, 236, 236);
+      background-color: rgb(0, 119, 179);
+      border-radius: 0.5rem;
+    }
+  }
+}

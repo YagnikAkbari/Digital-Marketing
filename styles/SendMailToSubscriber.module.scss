@@ -1,0 +1,103 @@
+@use "theme" as *;
+
+.container {
+  display: flex; /* Use flexbox */
+  justify-content: center; /* Center horizontally */
+  align-items: center;
+  margin: auto;
+  width: 100vw;
+  height: 100vh;
+  .dashboard {
+    position: relative;
+    background-color: rgb(241, 244, 245);
+    border-radius: 2rem;
+    box-sizing: border-box;
+    width: 98%;
+    height: 96%;
+    padding: 2rem;
+    .dashboard-header {
+      font-size: 2rem;
+    }
+  }
+
+  .tiles {
+    display: inline-block;
+    background-color: white;
+    width: 20%;
+    margin-top: 2rem;
+    border-radius: 1rem;
+    padding: 1rem;
+    font-size: 1rem;
+    font-weight: 800;
+    span {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      padding: 2rem;
+      font-weight: 500;
+      cursor: pointer;
+    }
+    span:hover {
+      text-shadow: 10px 10px solid grey;
+    }
+  }
+
+  .table-fixed {
+    border: 1px solid;
+    th {
+      border: 1px solid;
+    }
+    td {
+      border: 1px solid;
+    }
+  }
+
+  .logout {
+    position: absolute;
+    top: 5%;
+    right: 2.5%;
+    background-color: white;
+    border: 1px solid $primary-color-dark;
+    border-radius: 1rem;
+    padding: 1rem 2rem;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    div {
+      label {
+        margin-left: 0.2rem;
+        margin-bottom: 0.2rem;
+        z-index: 5;
+        color: black;
+        margin-top: 1rem;
+      }
+      input,
+      textarea {
+        border: 2px solid rgb(0, 119, 179) !important;
+        padding: 1rem;
+        z-index: 3;
+        height: 3rem;
+        border-radius: 0.5rem;
+      }
+      textarea {
+        height: 6rem;
+      }
+      input:focus,
+      textarea:focus {
+        outline: none;
+      }
+      .contact-us-submit {
+        width: 100%;
+        margin-top: 1rem;
+        padding: 0;
+        color: rgb(236, 236, 236);
+        background-color: rgb(0, 119, 179);
+        border-radius: 0.5rem;
+      }
+    }
+  }
+}

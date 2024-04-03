@@ -1,10 +1,10 @@
 import React, { FormEvent, useState } from "react";
-import styles from "../styles/FooterService.module.scss";
+import styles from "../../styles/FooterService.module.scss";
 import { useSelector } from "react-redux";
 import { RootState } from "@/store/store";
 import { useToasts } from "react-toast-notifications";
 
-const FooterService = () => {
+const Index = () => {
   const [mail, setMail] = useState<string>("");
   const { addToast } = useToasts();
   const theme = useSelector((state: RootState) => state?.theme);
@@ -13,7 +13,7 @@ const FooterService = () => {
   ) => {
     event.preventDefault();
     try {
-      const response = await fetch("http://localhost:5000/api/subscribe", {
+      const response = await fetch("http://localhost:5000/api/unsubscribe", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -35,7 +35,7 @@ const FooterService = () => {
         theme === "m-light" ? styles["l-newsletter"] : ""
       }`}
     >
-      <label htmlFor="email">Subscribe to our newsletter</label>
+      <label htmlFor="email">Unsubscribe from our newsletter</label>
       <form method="post" onSubmit={handleNewsletterSubscribe}>
         <input
           type="text"
@@ -51,4 +51,4 @@ const FooterService = () => {
   );
 };
 
-export default FooterService;
+export default Index;
