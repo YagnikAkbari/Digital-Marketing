@@ -13,13 +13,16 @@ const FooterService = () => {
   ) => {
     event.preventDefault();
     try {
-      const response = await fetch("http://localhost:5000/api/subscribe", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email: mail }),
-      });
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/subscribe`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email: mail }),
+        }
+      );
       const responseData = await response.json();
       if (response.ok) {
         addToast(responseData.message);

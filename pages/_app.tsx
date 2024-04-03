@@ -6,6 +6,7 @@ import { Provider } from "react-redux";
 import { ToastProvider } from "react-toast-notifications";
 
 export default function App({ Component, pageProps }: AppProps) {
+  console.log("xvc", process.env.NEXT_PUBLIC_BACKEND_URL);
   return (
     <Provider store={store}>
       <ToastProvider>

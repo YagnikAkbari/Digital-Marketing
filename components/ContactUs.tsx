@@ -19,20 +19,24 @@ export default function ContactPageOne() {
     setLoader(true);
     event.preventDefault();
     try {
-      const response = await fetch("http://localhost:5000/api/contact-us", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/contact-us`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        }
+      );
 
       if (response.ok) {
-        setLoader(false);
         addToast("We will contact you soon...");
         setData({});
       }
+      setLoader(false);
     } catch (err: any) {
+      setLoader(false);
       console.error(err.message);
     }
   };

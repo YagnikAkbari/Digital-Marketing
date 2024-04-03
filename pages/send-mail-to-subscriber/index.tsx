@@ -23,17 +23,44 @@ const Index: React.FC = () => {
     subscribers: [],
     contacters: [],
   });
-  console.log(dashboard);
+
+  const convertDateNTime = (string: string) => {
+    const timestamp = new Date(string);
+
+    const year = timestamp.getFullYear();
+    const month = timestamp.getMonth() + 1;
+    const day = timestamp.getDate();
+
+    const hours = timestamp.getHours();
+    const minutes = timestamp.getMinutes();
+    const seconds = timestamp.getSeconds();
+
+    return `${year}-${month < 10 ? "0" + month : month}-${
+      day < 10 ? "0" + day : day
+    } ${hours < 10 ? "0" + hours : hours}:${
+      minutes < 10 ? "0" + minutes : minutes
+    }:${seconds < 10 ? "0" + seconds : seconds}`;
+  };
+
   const getDashboardData = async () => {
-    const response = await fetch("http://localhost:5000/api/count", {
-      method: "GET",
-    });
-    const response1 = await fetch("http://localhost:5000/api/contacted", {
-      method: "GET",
-    });
-    const response2 = await fetch("http://localhost:5000/api/subscribers", {
-      method: "GET",
-    });
+    const response = await fetch(
+      `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/count`,
+      {
+        method: "GET",
+      }
+    );
+    const response1 = await fetch(
+      `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/contacted`,
+      {
+        method: "GET",
+      }
+    );
+    const response2 = await fetch(
+      `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/subscribers`,
+      {
+        method: "GET",
+      }
+    );
     const data = await response.json();
     const data1 = await response1.json();
     const data2 = await response2.json();
@@ -60,12 +87,15 @@ const Index: React.FC = () => {
 
   const handleLogout = async () => {
     try {
-      const response = await fetch("http://localhost:5000/api/logout", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/logout`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
 
       if (response.ok) {
         localStorage.removeItem("digitoken");
@@ -80,13 +110,16 @@ const Index: React.FC = () => {
     event.preventDefault();
     setLoader(true);
     try {
-      const response = await fetch("http://localhost:5000/api/send-email", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ ...data, token }),
-      });
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/send-email`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ ...data, token }),
+        }
+      );
 
       const responseData = await response.json();
 
@@ -142,7 +175,7 @@ const Index: React.FC = () => {
                 return (
                   <tr>
                     <td>{data.email ?? "-"}</td>
-                    <td>{data.subscribedAt ?? "-"}</td>
+                    <td>{convertDateNTime(data.subscribedAt) ?? "-"}</td>
                   </tr>
                 );
               })}
@@ -166,7 +199,7 @@ const Index: React.FC = () => {
                     <td>{data.name ?? "-"}</td>
                     <td>{data.email ?? "-"}</td>
                     <td>{data.message ?? "-"}</td>
-                    <td>{data.createdAt ?? "-"}</td>
+                    <td>{convertDateNTime(data.createdAt) ?? "-"}</td>
                   </tr>
                 );
               })}
