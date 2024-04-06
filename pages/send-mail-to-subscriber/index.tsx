@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useToasts } from "react-toast-notifications";
 import styles from "../../styles/SendMailToSubscriber.module.scss";
 import Drawer from "@/components/Drawer";
+import api from "../api/api";
 
 const Index: React.FC = () => {
   const router = useRouter();
@@ -11,7 +12,6 @@ const Index: React.FC = () => {
   const [isOpenSubscriber, setIsOpenSubscriber] = useState<boolean>(false);
   const [isOpenContacter, setIsOpenContacter] = useState<boolean>(false);
   const [loader, setLoader] = useState<boolean>(false);
-  const [token, setToken] = useState<string>("");
   const [dashboard, setDashboard] = useState<{
     totalContactUs: number;
     totalNewsltterSubscriber: number;
@@ -43,41 +43,67 @@ const Index: React.FC = () => {
   };
 
   const getDashboardData = async () => {
-    const response = await fetch(
-      `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/count`,
-      {
-        method: "GET",
+    try {
+      const response = await api(process.env.NEXT_PUBLIC_BACKEND_URL).get(
+        "/api/count"
+      );
+
+      if (response?.status === 200) {
+        setDashboard((prevDashboard) => ({
+          ...prevDashboard,
+          totalContactUs:
+            response?.data?.data?.totalContactUsCount ??
+            prevDashboard.totalContactUs,
+          totalNewsltterSubscriber:
+            response?.data?.data?.totalSubscribers ??
+            prevDashboard.totalNewsltterSubscriber,
+        }));
       }
-    );
-    const response1 = await fetch(
-      `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/contacted`,
-      {
-        method: "GET",
+    } catch (err: any) {
+      addToast("Cannot load dashboard data", { appearance: "error" });
+    }
+  };
+
+  const getContactedTableData = async () => {
+    try {
+      const response1 = await api(process.env.NEXT_PUBLIC_BACKEND_URL).get(
+        "/api/contacted"
+      );
+      if (response1?.status === 200) {
+        setDashboard((prevDashboard) => ({
+          ...prevDashboard,
+          contacters: response1?.data?.data ?? prevDashboard.contacters,
+        }));
       }
-    );
-    const response2 = await fetch(
-      `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/subscribers`,
-      {
-        method: "GET",
+    } catch (err) {
+      addToast("Cannot load Contact us data", {
+        appearance: "error",
+      });
+    }
+  };
+
+  const getSubscriberTableData = async () => {
+    try {
+      const response2 = await api(process.env.NEXT_PUBLIC_BACKEND_URL).get(
+        "/api/subscribers"
+      );
+      if (response2?.status === 200) {
+        setDashboard((prevDashboard) => ({
+          ...prevDashboard,
+          subscribers: response2?.data?.data ?? prevDashboard.subscribers,
+        }));
       }
-    );
-    const data = await response.json();
-    const data1 = await response1.json();
-    const data2 = await response2.json();
-    setDashboard({
-      totalContactUs: data.totalContactUsCount,
-      totalNewsltterSubscriber: data.totalSubscribers,
-      subscribers: data2,
-      contacters: data1,
-    });
+    } catch (err) {
+      addToast("Cannot load Subscriber data", {
+        appearance: "error",
+      });
+    }
   };
 
   useEffect(() => {
     const storedToken = localStorage.getItem("digitoken");
     if (!storedToken || storedToken === "") {
       router.push("/digi-login");
-    } else {
-      setToken(storedToken);
     }
   }, []);
 
@@ -85,51 +111,69 @@ const Index: React.FC = () => {
     getDashboardData();
   }, []);
 
+  useEffect(() => {
+    getSubscriberTableData();
+  }, []);
+
+  useEffect(() => {
+    getContactedTableData();
+  }, []);
+
   const handleLogout = async () => {
     try {
-      const response = await fetch(
-        `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/logout`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
+      const response = await api(process.env.NEXT_PUBLIC_BACKEND_URL).post(
+        "/api/logout",
+        data
       );
 
-      if (response.ok) {
+      if (response.status === 200) {
         localStorage.removeItem("digitoken");
         router.push("/digi-login");
       }
     } catch (err: any) {
-      console.error(err.message);
+      addToast(err?.response?.data?.error ?? "Error in Logout", {
+        appearance: "error",
+      });
     }
   };
 
   const handleSendToAll = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setLoader(true);
+    if (!Object.keys(data).length) {
+      setLoader(false);
+      return addToast("Please Fill all the data...", { appearance: "error" });
+    }
+    if (!data?.title || data?.title === "") {
+      setLoader(false);
+      return addToast("Please Fill title", { appearance: "error" });
+    }
+    if (!data?.description || data?.description === "") {
+      setLoader(false);
+      return addToast("Please Fill description", { appearance: "error" });
+    }
+
     try {
-      const response = await fetch(
-        `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/send-email`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ ...data, token }),
-        }
+      const response = await api(process.env.NEXT_PUBLIC_BACKEND_URL).post(
+        "/api/send-email",
+        data
       );
 
-      const responseData = await response.json();
-
-      if (response.ok) {
+      if (response.status === 200) {
         setLoader(false);
-        addToast(responseData.message);
+        addToast(response?.data?.message, { appearance: "success" });
         setData({});
       }
     } catch (err: any) {
-      console.error(err.message);
+      if (err?.response?.status === 401) {
+        localStorage.clear();
+        addToast(err?.response?.data?.error, { appearance: "error" });
+        setTimeout(() => {
+          window.location.replace("/digi-login");
+        }, 3000);
+      } else {
+        addToast(err?.message, { appearance: "error" });
+      }
     }
   };
 
@@ -219,6 +263,7 @@ const Index: React.FC = () => {
               name="title"
               id="title"
               placeholder="Title"
+              value={data?.title ?? ""}
               onChange={(e) =>
                 setData({ ...data, [e.target.name]: e.target.value })
               }
@@ -235,6 +280,7 @@ const Index: React.FC = () => {
               name="description"
               id="description"
               placeholder="Description"
+              value={data?.description ?? ""}
               onChange={(e) =>
                 setData({ ...data, [e.target.name]: e.target.value })
               }

@@ -1,11 +1,13 @@
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
-
+import api from "../api/api";
 import styles from "../../styles/Login.module.scss";
+import { useToasts } from "react-toast-notifications";
 
 const Index: React.FC = () => {
   const [data, setData] = useState<{ [key: string]: string }>({});
   const router = useRouter();
+  const { addToast } = useToasts();
 
   useEffect(() => {
     const token = localStorage.getItem("digitoken");
@@ -17,26 +19,23 @@ const Index: React.FC = () => {
   const handleLogin = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     try {
-      const response = await fetch(
-        `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/login`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(data),
-        }
+      const response = await api(process.env.NEXT_PUBLIC_BACKEND_URL).post(
+        "/api/login",
+        data
       );
 
-      const responseData = await response.json();
-
-      // Handle authentication success and redirect if necessary
-      if (response.ok) {
-        localStorage.setItem("digitoken", responseData.data.token);
+      if (response?.status === 200) {
+        localStorage.setItem("digitoken", response.data.data.token);
         router.push("/send-mail-to-subscriber");
       }
     } catch (err: any) {
-      console.error(err.message);
+      if (err?.response?.status === 401) {
+        console.log(err);
+        localStorage.clear();
+        addToast(err?.response?.data?.error, { appearance: "error" });
+      } else {
+        addToast(err?.message, { appearance: "error" });
+      }
     }
   };
 

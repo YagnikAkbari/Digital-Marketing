@@ -4,6 +4,7 @@ import SectionHeader from "@/common/SectionHeader";
 import { useSelector } from "react-redux";
 import { RootState } from "@/store/store";
 import { useToasts } from "react-toast-notifications";
+import api from "@/pages/api/api";
 
 export default function ContactPageOne() {
   const [loader, setLoader] = useState<boolean>(false);
@@ -14,30 +15,53 @@ export default function ContactPageOne() {
     message?: string;
   }>({});
 
+  const validateEmail = (email: string) => {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return regex.test(email);
+  };
+
   const theme = useSelector((state: RootState) => state?.theme);
   const handleContact = async (event: FormEvent<HTMLFormElement>) => {
-    setLoader(true);
     event.preventDefault();
+    setLoader(true);
+    if (!Object.keys(data).length) {
+      setLoader(false);
+      return addToast("Please Fill all the data...", { appearance: "error" });
+    }
+    if (!data?.name || data?.name === "") {
+      setLoader(false);
+      return addToast("Please Fill name", { appearance: "error" });
+    }
+    if (!data?.email || data?.email === "") {
+      setLoader(false);
+      return addToast("Please Fill email", { appearance: "error" });
+    }
+    if (!data?.message || data?.message === "") {
+      setLoader(false);
+      return addToast("Please Fill message", {
+        appearance: "error",
+      });
+    }
+
+    if (!validateEmail(data?.email)) {
+      setLoader(false);
+      return addToast("Fill the Valid email.", { appearance: "error" });
+    }
+
     try {
-      const response = await fetch(
-        `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/contact-us`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(data),
-        }
+      const response = await api(process.env.NEXT_PUBLIC_BACKEND_URL).post(
+        "/api/contact-us",
+        data
       );
 
-      if (response.ok) {
-        addToast("We will contact you soon...");
+      if (response.status === 200) {
+        addToast("We will contact you soon...", { appearance: "success" });
         setData({});
       }
       setLoader(false);
     } catch (err: any) {
       setLoader(false);
-      console.error(err.message);
+      addToast("Please contact later...", { appearance: "error" });
     }
   };
   return (
@@ -68,6 +92,7 @@ export default function ContactPageOne() {
                   type="text"
                   id="first_name"
                   name="name"
+                  value={data?.name ?? ""}
                   onChange={(e) =>
                     setData({ ...data, [e.target.name]: e.target.value })
                   }
@@ -85,6 +110,7 @@ export default function ContactPageOne() {
                   type="text"
                   id="email"
                   name="email"
+                  value={data?.email ?? ""}
                   onChange={(e) =>
                     setData({ ...data, [e.target.name]: e.target.value })
                   }
@@ -101,6 +127,7 @@ export default function ContactPageOne() {
                   className="flex border bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none rounded text-gray-300"
                   id="message"
                   name="message"
+                  value={data?.message ?? ""}
                   onChange={(e) =>
                     setData({ ...data, [e.target.name]: e.target.value })
                   }
