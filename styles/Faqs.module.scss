@@ -1,9 +1,16 @@
 @use "theme" as *;
 
+.faqs {
+  .single-accordion {
+    font-family: "Inter", sans-serif !important;
+  }
+}
+
 .l-faqs {
   .single-accordion {
     background-color: white;
     color: $primary-color-light;
+    font-family: "Inter", sans-serif !important;
   }
 }
 

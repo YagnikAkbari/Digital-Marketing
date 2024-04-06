@@ -1,4 +1,5 @@
 @use "theme" as *;
+@import url("https://fonts.googleapis.com/css2?family=Rhodium+Libre&display=swap");
 
 .newsletter {
   label {
@@ -10,6 +11,7 @@
   input[type="text"] {
     box-sizing: border-box;
     background-color: rgba(31, 31, 31);
+    font-family: "Inter", sans-serif !important;
     height: 51px;
     padding: 1rem;
     color: rgb(236, 236, 236);
