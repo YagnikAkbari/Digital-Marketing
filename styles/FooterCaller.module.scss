@@ -8,6 +8,7 @@
   transition: all 300ms ease;
   box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
     7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+  font-family: "Inter", sans-serif !important;
   &:hover {
     transform: scale(1.01);
     box-shadow: none;
@@ -19,6 +20,7 @@
 }
 
 .l-call-to-footer {
+  font-family: "Inter", sans-serif !important;
   background-color: $tertiary-color-light;
 }
 
@@ -36,7 +38,7 @@
     p {
       color: rgb(236, 236, 236);
       font-size: 1.15rem;
-      font-family: "Rhodium Libre", serif;
+      font-family: "Rhodium Libre", serif !important;
     }
   }
 }

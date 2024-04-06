@@ -4,6 +4,7 @@
   position: relative;
   p {
     color: rgb(236, 236, 236);
+    font-family: "Inter", sans-serif !important;
   }
   &::before {
     content: "";
@@ -18,6 +19,7 @@
 .l-footer {
   p {
     color: $primary-color-light;
+    font-family: "Inter", sans-serif !important;
   }
 }
 

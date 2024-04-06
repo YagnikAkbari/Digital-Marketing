@@ -4,7 +4,7 @@
   label {
     color: rgb(236, 236, 236);
     font-size: 1.15rem;
-    font-family: "Rhodium Libre", serif;
+    font-family: "Rhodium Libre", serif !important;
     margin-right: 3rem;
   }
   input[type="text"] {
@@ -35,6 +35,7 @@
 .l-newsletter {
   label {
     color: $primary-color-light;
+    font-family: "Rhodium Libre", serif !important;
   }
   input[type="text"] {
     background-color: white;
