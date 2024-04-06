@@ -17,56 +17,44 @@ const Footer = () => {
           target="_blank"
           className={styles["social-button"]}
         >
-          <img
-            src={
-              theme === "m-light"
-                ? "images/FacebookF-dark.svg"
-                : "images/Facebook.svg"
-            }
-            alt="facebook"
-          />
+          <i
+            className={`fab fa-facebook-f ${
+              theme === "m-light" ? "fa-light-convert" : "fa-dark-convert"
+            }`}
+          ></i>
         </a>
         <a
           href="https://www.google.com"
           target="_blank"
           className={styles["social-button"]}
         >
-          <img
-            src={
-              theme === "m-light"
-                ? "images/Twitter-dark.svg"
-                : "images/twitter.png"
-            }
-            alt="twitter"
-          />
+          <i
+            className={`fab fa-twitter ${
+              theme === "m-light" ? "fa-light-convert" : "fa-dark-convert"
+            }`}
+          ></i>
         </a>
         <a
           href="https://www.google.com"
           target="_blank"
           className={styles["social-button"]}
         >
-          <img
-            src={
-              theme === "m-light"
-                ? "images/Linkedin-dark.svg"
-                : "images/Linkedin.svg"
-            }
-            alt="linked"
-          />
+          <i
+            className={`fab fa-linkedin-in ${
+              theme === "m-light" ? "fa-light-convert" : "fa-dark-convert"
+            }`}
+          ></i>
         </a>
         <a
           href="https://www.google.com"
           target="_blank"
           className={styles["social-button"]}
         >
-          <img
-            src={
-              theme === "m-light"
-                ? "images/instagram-dark.svg"
-                : "images/instagram.svg"
-            }
-            alt="instagram"
-          />
+          <i
+            className={`fab fa-instagram ${
+              theme === "m-light" ? "fa-light-convert" : "fa-dark-convert"
+            }`}
+          ></i>
         </a>
       </div>
       <p className="flex items-center">

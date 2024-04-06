@@ -24,7 +24,7 @@ const Portfolio = () => {
           title="Strategic Content Campaign Campaign"
           service="linkedin growth"
           description="Implemented a targeted content campaign on LinkedIn to enhance organic growth for a professional services firm. Developed and curated industry-relevant articles"
-          image="images/linkedin.jpg"
+          image="images/sunset.jpg"
         />
       </div>
     </div>

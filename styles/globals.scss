@@ -76,6 +76,14 @@ body {
     z-index: 10;
   }
 
+  .fa-light-convert {
+    color: $primary-color-light;
+  }
+
+  .fa-dark-convert {
+    color: $light-color-dark;
+  }
+
   .call-to-action {
     background-color: $primary-color-dark;
     color: $light-color-dark;

@@ -15,7 +15,7 @@ const Testimonials = () => {
       }`}
     >
       <SectionHeader header="testimonials" />
-      <div className="flex justify-between mt-20">
+      <div className="grid grid-cols-3 justify-center mt-20">
         <TestimonialCard
           service="video editing"
           title="Dynamic Promo Video"
@@ -32,15 +32,6 @@ const Testimonials = () => {
           client="Jhon Doe"
           designation="ceo"
           organization="Quick Mantra"
-          image="images/man.svg"
-        />
-        <TestimonialCard
-          service="video editing"
-          title="Dynamic Promo Video"
-          description="Crafted a compelling promotional video for a client's product launch, seamlessly blending visuals, music, and narrative to captivate the audience."
-          client="Jhon Doe"
-          designation="ceo"
-          organization="Apples’s to Oragnes"
           image="images/man.svg"
         />
       </div>
