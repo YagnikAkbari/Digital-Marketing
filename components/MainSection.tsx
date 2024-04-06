@@ -13,13 +13,12 @@ const MainSection = () => {
     >
       <div className={styles["hero-content"]}>
         <h1>
-          Ignite Your YouTube Success Journey with Our World-Class Content Team
+          Helping the <span>world's</span> creators create.
         </h1>
         <p>
-          Empower Your Brand's Growth with GROWWITUP's Dynamic Digital
-          Solutions. Let Us be Your Strategic Ally on the Path to Digital
-          Success, Unleashing the Power of Social Media and Elevating Your
-          Online Presence.
+          Elevate Your Brand's Online Presence with Our Exceptional Digital
+          Marketing Solutions. Let Us Be Your Strategic Ally on the Path to
+          Digital Success.
         </p>
         <button className={`call-to-action`}>Get Your Session</button>
       </div>

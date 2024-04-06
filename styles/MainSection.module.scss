@@ -11,6 +11,9 @@
     font-weight: 500;
     color: $light-color-dark;
     letter-spacing: 0.9px;
+    span {
+      color: $primary-color-dark;
+    }
   }
 
   p {
