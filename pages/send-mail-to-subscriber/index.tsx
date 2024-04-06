@@ -35,11 +35,11 @@ const Index: React.FC = () => {
     const minutes = timestamp.getMinutes();
     const seconds = timestamp.getSeconds();
 
-    return `${year}-${month < 10 ? "0" + month : month}-${
-      day < 10 ? "0" + day : day
-    } ${hours < 10 ? "0" + hours : hours}:${
+    return `${day < 10 ? "0" + day : day}/${
+      month < 10 ? "0" + month : month
+    }/${year} ${hours < 10 ? "0" + hours : hours}:${
       minutes < 10 ? "0" + minutes : minutes
-    }:${seconds < 10 ? "0" + seconds : seconds}`;
+    }`;
   };
 
   const getDashboardData = async () => {

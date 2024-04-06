@@ -44,11 +44,16 @@
   }
 
   .table-fixed {
+    margin: 2rem;
     border: 1px solid;
     th {
+      height: 30px;
+      text-align: center;
       border: 1px solid;
+      background-color: antiquewhite;
     }
     td {
+      text-align: center;
       border: 1px solid;
     }
   }
