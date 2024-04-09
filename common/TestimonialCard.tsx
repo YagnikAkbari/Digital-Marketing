@@ -37,7 +37,7 @@ const TestimonialCard = ({
         <img src={image} alt="title" className="client-image" />
         <h3 className="cilent-name">{client ?? "Client"}</h3>
         <p className="client-description">
-          <span>{designation ?? "Employee"}</span> of{" "}
+          <span>{designation ?? ""}</span> {designation ? "of" : ""}{" "}
           {organization ?? "ABC Inc."}
         </p>
       </div>

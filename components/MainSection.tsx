@@ -13,6 +13,10 @@ const MainSection = () => {
     >
       <div className={styles["hero-content"]}>
         <h1>
+          Empower the world with <span>social</span>.
+        </h1>
+        <h1>Do Different, Be Different</h1>
+        <h1>
           Helping the <span>world's</span> creators create.
         </h1>
         <p>

@@ -6,25 +6,25 @@ import React from "react";
 const Portfolio = () => {
   return (
     <div id="projects" className={`mt-32 ${styles.projects}`}>
-      <SectionHeader header="portfolio" prefix="our" />
+      <SectionHeader header="strength" prefix="our" />
       <div className="flex justify-between mt-20">
         <ProjectCard
-          title="Dynamic Promo Video"
+          title="Edit the Emotions"
           service="video editing"
-          description="Crafted a compelling promotional video for a client's product launch, seamlessly blending visuals, music, and narrative to captivate the audience."
-          image="images/sunset.jpg"
+          description="We are not creating videos, we create emotions. Mostly we edit all kinds of videos from Podcast to Roast videos."
+          image="images/video.jpg"
         />
         <ProjectCard
-          title="Instagram Reel Campaign"
-          service="reel posting"
-          description="Managed a successful Instagram Reel campaign for a lifestyle brand, curating and posting a series of engaging short videos."
-          image="images/insta.jpg"
+          title="Improve the CTR"
+          service="Thumbnail Design"
+          description="We have the best designers who help creators get maximum views and attention span in the video."
+          image="images/thumbnail.png"
         />
         <ProjectCard
-          title="Strategic Content Campaign Campaign"
-          service="linkedin growth"
-          description="Implemented a targeted content campaign on LinkedIn to enhance organic growth for a professional services firm. Developed and curated industry-relevant articles"
-          image="images/sunset.jpg"
+          title="Strategic Content campaign"
+          service="Social Media Growth"
+          description="It’s all about attention and relatability. Learn the algorithm and make a strategy accordingly. We implemented a content campaign on Social Media to enhance the growth of our clients."
+          image="images/socialmedia.png"
         />
       </div>
     </div>

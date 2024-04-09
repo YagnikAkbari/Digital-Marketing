@@ -16,6 +16,7 @@
 
 .single-accordion {
   border: 2px solid rgb(0, 119, 179);
+  border-radius: 5px;
   transition: all 0.4s ease;
   &:hover {
     border-color: rgb(109, 155, 176);
