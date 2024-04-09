@@ -41,7 +41,7 @@ const Testimonials = () => {
           client="Detective Vicky"
           designation=""
           organization="youtuber"
-          image="images/OFk.jpg"
+          image="images/vicky.jpg"
         />
       </div>
     </div>

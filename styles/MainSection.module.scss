@@ -6,8 +6,8 @@
 
   h1 {
     font-family: "Lato", sans-serif;
-    font-size: 52px;
-    line-height: 65px;
+    font-size: 50px;
+    line-height: 55px;
     font-weight: 500;
     color: $light-color-dark;
     letter-spacing: 0.9px;
@@ -21,12 +21,20 @@
     color: $light-color-dark;
     line-height: 31px;
     letter-spacing: 1px;
-    margin-top: 25px;
+    margin-top: 15px;
     margin-bottom: 14px;
   }
 
   .hero-content {
-    max-width: 685px;
+    max-width: 715px;
+    .small {
+      font-family: "Lato", sans-serif;
+      font-size: 40px;
+      line-height: 45px;
+      font-weight: 500;
+      color: $light-color-dark;
+      letter-spacing: 0.9px;
+    }
   }
 }
 
@@ -36,6 +44,11 @@
   }
   p {
     color: $primary-color-light;
+  }
+  .hero-content {
+    .small {
+      color: $primary-color-light;
+    }
   }
 }
 
