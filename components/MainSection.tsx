@@ -15,7 +15,9 @@ const MainSection = () => {
         <h1>
           Empower the world with <span>social</span>.
         </h1>
-        <p className={styles["small"]}>Do Different, Be Different</p>
+        <p className={styles["small"]}>
+          Do Different, Be Different<span></span>
+        </p>
         {/* <h1>
           Helping the <span>world's</span> creators create.
         </h1> */}

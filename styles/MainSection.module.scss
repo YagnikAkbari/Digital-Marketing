@@ -34,6 +34,21 @@
       font-weight: 500;
       color: $light-color-dark;
       letter-spacing: 0.9px;
+      z-index: 2;
+
+      span {
+        position: relative;
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          width: 170px;
+          z-index: -1;
+          border-bottom: 15px solid $primary-color-dark;
+          opacity: 0.8;
+        }
+      }
     }
   }
 }
