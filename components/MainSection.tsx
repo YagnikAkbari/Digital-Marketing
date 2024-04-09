@@ -20,9 +20,13 @@ const MainSection = () => {
           Helping the <span>world's</span> creators create.
         </h1> */}
         <p>
-          Elevate Your Brand's Online Presence with Our Exceptional Digital
-          Marketing Solutions. Let Us Be Your Strategic Ally on the Path to
-          Digital Success.
+          We are a dedicated team of professionals committed to assisting brands
+          in achieving exponential growth through strategic utilization of
+          social media platforms. Elevate your YouTube presence effortlessly
+          with our top-tier content creation services. As the trusted choice for
+          influential creators and ambitious entrepreneurs seeking to expand
+          their YouTube presence, we provide unparalleled strategy and
+          production expertise.
         </p>
         <button className={`call-to-action`}>Get Your Session</button>
       </div>
