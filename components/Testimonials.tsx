@@ -29,9 +29,9 @@ const Testimonials = () => {
           service="video editing"
           title="youtube management and Strategy"
           description="I cannot thank Growwitup enough for the incredible help they provided in boosting my YouTube channel's success. As a content creator, gaining subscribers is crucial for growth and exposure, and Growwitup made it happen for me. Their expertise in YouTube SEO is unmatched, and I saw a significant increase in my subscriber count after implementing their strategies. Not only did they help me gain subscribers, but they also provided valuable insights and tips to improve my overall channel performance. I highly recommend Growwitup to anyone looking to take their YouTube channel to the next level. Thank you, Growwitup, for your amazing work!"
-          client="Kishan Kunal Kanchan"
+          client="Kunal Kanchan"
           designation="ceo"
-          organization="Quick Mantra"
+          organization="Kishan Kunal Kanchan"
           image="images/OFk.jpg"
         />
         <TestimonialCard
