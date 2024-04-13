@@ -3,11 +3,9 @@ import styles from "../styles/FooterCaller.module.scss";
 import { RootState } from "@/store/store";
 import { useSelector } from "react-redux";
 import { useToasts } from "react-toast-notifications";
-import DatePicker from "react-datepicker";
+// import { Calendar } from "react-date-range";
 
-import "react-datepicker/dist/react-datepicker.css";
 import api from "@/pages/api/api";
-// import ReactDatePicker from "react-datepicker";
 
 const FooterCaller = () => {
   const theme = useSelector((state: RootState) => state?.theme);
@@ -77,7 +75,7 @@ const FooterCaller = () => {
               className={`fa-solid fa-arrow-up-long ${styles["up-arrow"]}`}
             ></i>
           </button>
-          {showDate && (
+          {/* {showDate && (
             <div
               className={`${styles["datepicker"]} ${
                 theme === "m-light" ? styles["l-datepicker"] : ""
@@ -98,10 +96,16 @@ const FooterCaller = () => {
                     setStartDate(date);
                   }}
                 />
+                <Calendar
+                  date={startDate}
+                  onChange={(date: object) => {
+                    setStartDate(date);
+                  }}
+                />
                 <button type="submit">Set Meeting</button>
               </form>
             </div>
-          )}
+          )} */}
         </div>
       </div>
     </div>

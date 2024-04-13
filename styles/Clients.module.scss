@@ -1,9 +1,12 @@
 @use "theme" as *;
 
 .brand-img {
-  filter: grayscale(1);
+  // filter: grayscale(1);
   align-self: center;
   justify-self: center;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
 }
 
 @media screen and (max-width: 768px) {
@@ -17,7 +20,8 @@
       margin: 2.5rem 0;
       img {
         margin: 0.85rem 0;
-        height: 40px;
+        height: 100px;
+        width: 100px;
       }
     }
   }
