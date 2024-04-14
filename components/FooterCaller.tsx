@@ -3,7 +3,9 @@ import styles from "../styles/FooterCaller.module.scss";
 import { RootState } from "@/store/store";
 import { useSelector } from "react-redux";
 import { useToasts } from "react-toast-notifications";
-// import { Calendar } from "react-date-range";
+
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.min.css";
 
 import api from "@/pages/api/api";
 
@@ -12,7 +14,7 @@ const FooterCaller = () => {
   const [mail, setMail] = useState<string>("");
   const { addToast } = useToasts();
   const [showDate, setShowDate] = useState<boolean>(false);
-  const [startDate, setStartDate] = useState<object>(new Date());
+  const [startDate, setStartDate] = useState<Date>(new Date());
   const validateEmail = (email: string) => {
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return regex.test(email);
@@ -33,7 +35,6 @@ const FooterCaller = () => {
       if (!validateEmail(mail)) {
         return addToast("Fill the Valid email.", { appearance: "error" });
       }
-      setShowDate(false);
 
       const response = await api(process.env.NEXT_PUBLIC_BACKEND_URL).post(
         "/api/send-date",
@@ -44,6 +45,7 @@ const FooterCaller = () => {
         addToast(response?.data.message, { appearance: "success" });
         setMail("");
         setStartDate(new Date());
+        setShowDate(false);
       }
     } catch (err: any) {
       addToast("Please do it after some time.", { appearance: "error" });
@@ -75,7 +77,7 @@ const FooterCaller = () => {
               className={`fa-solid fa-arrow-up-long ${styles["up-arrow"]}`}
             ></i>
           </button>
-          {/* {showDate && (
+          {showDate && (
             <div
               className={`${styles["datepicker"]} ${
                 theme === "m-light" ? styles["l-datepicker"] : ""
@@ -92,20 +94,14 @@ const FooterCaller = () => {
                 />
                 <DatePicker
                   selected={startDate}
-                  onChange={(date: object) => {
-                    setStartDate(date);
-                  }}
-                />
-                <Calendar
-                  date={startDate}
-                  onChange={(date: object) => {
+                  onChange={(date: Date) => {
                     setStartDate(date);
                   }}
                 />
                 <button type="submit">Set Meeting</button>
               </form>
             </div>
-          )} */}
+          )}
         </div>
       </div>
     </div>

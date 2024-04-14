@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.2",
-    "@types/react-datepicker": "^6.2.0",
     "axios": "^1.6.8",
     "bootstrap": "^5.3.3",
     "flowbite": "^2.3.0",
@@ -29,6 +28,7 @@
   "devDependencies": {
     "@types/node": "^20",
     "@types/react": "^18",
+    "@types/react-datepicker": "^6.2.0",
     "@types/react-dom": "^18",
     "autoprefixer": "^10.0.1",
     "postcss": "^8",
