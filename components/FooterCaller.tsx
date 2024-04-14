@@ -78,29 +78,32 @@ const FooterCaller = () => {
             ></i>
           </button>
           {showDate && (
-            <div
-              className={`${styles["datepicker"]} ${
-                theme === "m-light" ? styles["l-datepicker"] : ""
-              }`}
-            >
-              <form method="post" onSubmit={handleMeetingDate}>
-                <span>Select Meeting Date</span>
-                <input
-                  type="text"
-                  placeholder="Email address"
-                  name="email"
-                  value={mail ?? ""}
-                  onChange={(e) => setMail(e.target.value)}
-                />
-                <DatePicker
-                  selected={startDate}
-                  onChange={(date: Date) => {
-                    setStartDate(date);
-                  }}
-                />
-                <button type="submit">Set Meeting</button>
-              </form>
-            </div>
+            <>
+              <div className={styles.overlay}></div>
+              <div
+                className={`${styles["datepicker"]} ${
+                  theme === "m-light" ? styles["l-datepicker"] : ""
+                }`}
+              >
+                <form method="post" onSubmit={handleMeetingDate}>
+                  <span>Select Meeting Date</span>
+                  <input
+                    type="text"
+                    placeholder="Email address"
+                    name="email"
+                    value={mail ?? ""}
+                    onChange={(e) => setMail(e.target.value)}
+                  />
+                  <DatePicker
+                    selected={startDate}
+                    onChange={(date: Date) => {
+                      setStartDate(date);
+                    }}
+                  />
+                  <button type="submit">Set Meeting</button>
+                </form>
+              </div>
+            </>
           )}
         </div>
       </div>
