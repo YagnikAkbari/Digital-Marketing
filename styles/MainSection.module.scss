@@ -34,7 +34,6 @@
       font-weight: 500;
       color: $light-color-dark;
       letter-spacing: 0.9px;
-      // z-index: 5;
 
       span {
         position: relative;
@@ -49,6 +48,10 @@
           // opacity: 0.8;
         }
       }
+    }
+
+    .para {
+      margin-bottom: 3rem;
     }
   }
 }

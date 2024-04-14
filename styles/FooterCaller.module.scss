@@ -22,13 +22,15 @@
 .datepicker {
   position: fixed;
   background-color: white;
-  padding: 5rem;
+  padding: 3rem;
   z-index: 150;
-  top: 55%;
-  left: 70%;
+  bottom: 0;
+  width: 350px;
+  right: 5%;
   form {
     display: flex;
     flex-direction: column;
+    width: 100%;
   }
   span {
     color: $primary-color-light;
@@ -36,11 +38,13 @@
   }
   input {
     margin-top: 1rem;
+    width: inherit;
     font-family: "Inter", sans-serif !important;
   }
   button[type="submit"] {
     background-color: $primary-color-dark;
     color: $light-color-dark;
+    width: inherit;
     font-family: "Inter", sans-serif !important;
     border-radius: 8px;
     margin-top: 1rem;

@@ -19,7 +19,7 @@ const MainSection = () => {
         <p className={styles["small"]}>
           Your Growth, Our Expertise<span></span>
         </p>
-        <p>
+        <p className={styles.para}>
           We are a dedicated team of professionals committed to assisting brands
           in achieving exponential growth through strategic utilization of
           social media platforms. Elevate your YouTube presence effortlessly
