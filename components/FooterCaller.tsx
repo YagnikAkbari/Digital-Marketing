@@ -79,7 +79,12 @@ const FooterCaller = () => {
           </button>
           {showDate && (
             <>
-              <div className={styles.overlay}></div>
+              <div
+                className={styles.overlay}
+                onClick={() => {
+                  setShowDate(false);
+                }}
+              ></div>
               <div
                 className={`${styles["datepicker"]} ${
                   theme === "m-light" ? styles["l-datepicker"] : ""
