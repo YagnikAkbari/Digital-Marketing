@@ -34,6 +34,7 @@
       font-weight: 500;
       color: $light-color-dark;
       letter-spacing: 0.9px;
+      z-index: 3;
 
       span {
         position: relative;
@@ -42,10 +43,10 @@
           position: absolute;
           bottom: 0;
           right: 0;
-          width: 170px;
+          width: 180px;
           z-index: 1;
           border-bottom: 15px solid $primary-color-dark;
-          // opacity: 0.8;
+          opacity: 0.8;
         }
       }
     }
@@ -75,7 +76,7 @@
           position: absolute;
           bottom: 0;
           right: 0;
-          width: 170px;
+          width: 180px;
           z-index: -1;
           border-bottom: 15px solid $primary-color-dark;
           opacity: 0.8;
