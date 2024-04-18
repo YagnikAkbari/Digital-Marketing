@@ -48,13 +48,13 @@
   padding: 13px;
   font-size: 16px;
   font-weight: 400;
+  transition: max-height 600ms ease;
 }
 
 .hide {
   max-height: 0;
   overflow: hidden;
   width: 100%;
-  padding: 0;
 }
 
 @media screen and (max-width: 768px) {
