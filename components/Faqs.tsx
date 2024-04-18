@@ -23,14 +23,15 @@ const accrMenu = [
       "Our pricing is flexible, depending on the duration and genre of the content. We offer monthly and per-project models.",
   },
   {
-    question: "Where is Praper Media located, and what are the working hours?",
+    question:
+      "Where is Growwitup Media located, and what are the working hours?",
     answer:
       "Our office is located in India, and working hours are 10 AM - 6 PM IST (Mon - Sat).",
   },
   {
     question: "Do you create repurposed content for Reels / TikTok / Shorts?",
     answer:
-      "Yes we do. In fact, we have a dedicated Vertical Short-Format Video team at Praper Media.",
+      "Yes we do. In fact, we have a dedicated Vertical Short-Format Video team at Growwitup Media.",
   },
   {
     question: "Do you offer packages for Reels / TikTok / Shorts?",
