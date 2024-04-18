@@ -26,8 +26,8 @@ const Testimonials = () => {
           image="images/outperform.png"
         />
         <TestimonialCard
-          service="video editing"
-          title="youtube management and Strategy"
+          service="Socail Media"
+          title="Youtube Management and Strategy"
           description="I cannot thank Growwitup enough for the incredible help they provided in boosting my YouTube channel's success. As a content creator, gaining subscribers is crucial for growth and exposure, and Growwitup made it happen for me. Their expertise in YouTube SEO is unmatched, and I saw a significant increase in my subscriber count after implementing their strategies. Not only did they help me gain subscribers, but they also provided valuable insights and tips to improve my overall channel performance. I highly recommend Growwitup to anyone looking to take their YouTube channel to the next level. Thank you, Growwitup, for your amazing work!"
           client="Kunal Kanchan"
           designation="ceo"
@@ -35,7 +35,7 @@ const Testimonials = () => {
           image="images/OFk.jpg"
         />
         <TestimonialCard
-          service="video editing"
+          service="youtube"
           title="Thumbnail design"
           description="I have always wanted a team that can understand my vision and put it into the designs. I really loved the creativity he puts in the work & this is the reason i try to give as much creative freedom as i can!Timely deliveries & active coordination is a plus point! Looking forward to work with him again in future. 💯"
           client="Detective Vicky"

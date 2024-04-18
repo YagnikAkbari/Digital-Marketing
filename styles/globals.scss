@@ -482,5 +482,14 @@ body {
         letter-spacing: 0.4px;
       }
     }
+    .testimonial-card {
+      &:hover {
+        .client-section {
+          .client-image {
+            transform: scale(1.15);
+          }
+        }
+      }
+    }
   }
 }

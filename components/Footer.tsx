@@ -12,7 +12,7 @@ const Footer = () => {
       }`}
     >
       <div className="flex justify-between items-center space-x-4">
-        <a
+        {/* <a
           href="https://www.google.com"
           target="_blank"
           className={styles["social-button"]}
@@ -22,9 +22,9 @@ const Footer = () => {
               theme === "m-light" ? "fa-light-convert" : "fa-dark-convert"
             }`}
           ></i>
-        </a>
+        </a> */}
         <a
-          href="https://www.google.com"
+          href="https://x.com/Growwitup?t=pWHcCHbXIp2hlyVcfyJZVg&s=09"
           target="_blank"
           className={styles["social-button"]}
         >
@@ -35,7 +35,7 @@ const Footer = () => {
           ></i>
         </a>
         <a
-          href="https://www.google.com"
+          href="https://www.linkedin.com/company/growwitup/"
           target="_blank"
           className={styles["social-button"]}
         >
@@ -46,7 +46,7 @@ const Footer = () => {
           ></i>
         </a>
         <a
-          href="https://www.google.com"
+          href="https://www.instagram.com/growwitup?igsh=azA0NTVkaW11dzA4"
           target="_blank"
           className={styles["social-button"]}
         >
