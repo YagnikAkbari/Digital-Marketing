@@ -123,6 +123,17 @@ body {
       left: 103%;
       width: 230px;
       border-bottom: 5px solid $secondary-color-dark;
+      border-radius: 5px;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 70%;
+        left: 103%;
+        width: 10px;
+        border-bottom: 5px solid $secondary-color-dark;
+        border-radius: 5px;
+      }
     }
   }
 
