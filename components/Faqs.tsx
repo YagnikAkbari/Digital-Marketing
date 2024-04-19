@@ -108,7 +108,6 @@ const Faqs = () => {
                   >
                     {idx === 0 && (
                       <div className="inline">
-                        {/* <p>You can</p> */}
                         <p>{item?.answer}</p>
                         <Link
                           href="https://forms.gle/Nc3fkUkcTmbbE4ff8"
@@ -117,7 +116,6 @@ const Faqs = () => {
                         >
                           Get in touch
                         </Link>
-                        {/* <p>for more detailed estimates.</p> */}
                       </div>
                     )}
                     {idx !== 0 && item?.answer}
