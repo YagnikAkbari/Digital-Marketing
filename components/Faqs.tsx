@@ -4,12 +4,14 @@ import React, { useState } from "react";
 import styles from "../styles/Faqs.module.scss";
 import { useSelector } from "react-redux";
 import { RootState } from "@/store/store";
+import Link from "next/link";
 
 const accrMenu = [
   {
     question:
       "What is the turnaround time for the video and what's packages are you offering?",
-    answer: "link",
+    answer:
+      "We’re committed to providing the best results in the quickest time. This usually ranges between 2-4 days, depending on the length and type of videos. The world is hooked to short form video and we know you want to get in on it. We offer monthly packages and deals for the same.",
   },
 
   {
@@ -78,7 +80,10 @@ const Faqs = () => {
           className={`grid grid-cols-2 mx-auto gap-y-4 gap-x-8 ${styles["accordion"]}`}
         >
           {accrMenu.map(
-            (item: { question: string; answer: string }, idx: number) => (
+            (
+              item: { question: string; answer: string; extra?: string },
+              idx: number
+            ) => (
               <div key={idx}>
                 <div className={styles["single-accordion"]}>
                   <button
@@ -101,17 +106,20 @@ const Faqs = () => {
                         : styles["hide"]
                     }`}
                   >
-                    {item?.answer === "link" ? (
-                      <a
-                        href="https://forms.gle/Nc3fkUkcTmbbE4ff8"
-                        className="link"
-                        target="_blank"
-                      >
-                        Get in touch
-                      </a>
-                    ) : (
-                      item?.answer
+                    {idx === 0 && (
+                      <div className="flex gap-2">
+                        <p>You can</p>
+                        <Link
+                          href="https://forms.gle/Nc3fkUkcTmbbE4ff8"
+                          className="link"
+                          target="_blank"
+                        >
+                          Get in touch
+                        </Link>
+                        <p>for more detailed estimates.</p>
+                      </div>
                     )}
+                    {idx !== 0 && item?.answer}
                   </p>
                 </div>
               </div>
