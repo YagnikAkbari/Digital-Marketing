@@ -107,16 +107,17 @@ const Faqs = () => {
                     }`}
                   >
                     {idx === 0 && (
-                      <div className="flex gap-2">
-                        <p>You can</p>
+                      <div className="inline">
+                        {/* <p>You can</p> */}
+                        <p>{item?.answer}</p>
                         <Link
                           href="https://forms.gle/Nc3fkUkcTmbbE4ff8"
-                          className="link"
+                          className="link inline mt-5"
                           target="_blank"
                         >
                           Get in touch
                         </Link>
-                        <p>for more detailed estimates.</p>
+                        {/* <p>for more detailed estimates.</p> */}
                       </div>
                     )}
                     {idx !== 0 && item?.answer}
